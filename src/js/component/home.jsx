@@ -1,26 +1,36 @@
 import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
+import PropTypes from "prop-types";
 //create your first component
-const Home = () => {
+
+const SecondsCounter = (props) => {
 	return (
-		<div>
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<>
+			<div className="container">
+				<div className="row contador">
+					<div className="counterNumbers d-flex justify-content-center mt-3">
+						<div className="counter">
+							<i className="far fa-clock"></i>
+						</div>
+						<div className="counter">{props.numSix}</div>
+						<div className="counter">{props.numFive}</div>
+						<div className="counter">{props.numFour}</div>
+						<div className="counter">{props.numThree}</div>
+						<div className="counter">{props.numTwo}</div>
+						<div className="counter">{props.numOne}</div>
+					</div>
+				</div>
+			</div>
+		</>
 	);
 };
 
-export default Home;
+SecondsCounter.propTypes = {
+	numOne: PropTypes.number,
+	numTwo: PropTypes.number,
+	numThree: PropTypes.number,
+	numFour: PropTypes.number,
+	numFive: PropTypes.number,
+	numSix: PropTypes.number,
+};
+
+export default SecondsCounter;
